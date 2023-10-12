@@ -46,7 +46,7 @@ def getLokiResult(inputSTR):
     logging.debug("Loki Result => {}".format(resultDICT))
     return resultDICT
 
-def moneyName(inputSTR): # input src or tgt to get currency  ＃沒有法郎
+def moneyName(inputSTR): # input src or tgt to get currency  
     moneyDICT = {"歐元": "EUR",
                  "美金": "USD",
                  "日圓": "JPY",
