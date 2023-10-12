@@ -46,33 +46,6 @@ def getLokiResult(inputSTR):
     logging.debug("Loki Result => {}".format(resultDICT))
     return resultDICT
 
-def moneyName(inputSTR): # input src or tgt to get currency  
-    moneyDICT = {"歐元": "EUR",
-                 "美金": "USD",
-                 "日圓": "JPY",
-                 "台幣": "TWD",
-                 "臺幣": "TWD",
-                 "英鎊": "GBP",
-                 "法郎": "CHF",
-                 "澳幣": "AUD",
-                 "港幣": "HKD",
-                 "泰銖": "THB"}
-    if (inputSTR == None): # init = TWD
-        moneyDICT[inputSTR] = "TWD"
-    return moneyDICT[inputSTR]
-
-def getTodayExchangeRate(): # get ExchangeRate table
-    response = get("https://tw.rter.info/capi.php")
-    rateDICT = response.json()
-    return rateDICT
-
-def amountSTRconvert(inputSTR): # convert [X元] into [number X]
-    resultDICT = {}
-    if inputSTR == None: # 沒說換匯金額多少就預設1
-        resultDICT["number"] ==1
-    else:
-        resultDICT = articut.parse(inputSTR, level="lv3") # 有換匯金額就轉成Number
-    return resultDICT["number"][inputSTR]
 
 class BotClient(discord.Client):
 
